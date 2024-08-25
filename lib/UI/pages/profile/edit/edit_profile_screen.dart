@@ -9,6 +9,7 @@ class EditProfilePage extends StatefulWidget {
   const EditProfilePage({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _EditProfilePageState createState() => _EditProfilePageState();
 }
 
@@ -78,6 +79,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
       });
 
       // Update FirebaseAuth email
+      // ignore: deprecated_member_use
       await user.updateEmail(_emailController.text.trim());
 
       setState(() {
@@ -85,6 +87,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
       });
 
       // Navigate back or show a success message
+      // ignore: use_build_context_synchronously
       Navigator.pop(context);
     }
   }
@@ -133,6 +136,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         isLoading = false;
       });
       // Handle errors (e.g., display a message to the user)
+      // ignore: avoid_print
       print('Error uploading profile picture: $e');
     }
   }
